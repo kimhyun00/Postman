@@ -1,0 +1,38 @@
+$kind: http-request
+description: ""
+url: http://localhost:3000/produtos
+method: POST
+headers:
+  Authorization: "{{token}}"
+body:
+  type: json
+  content: "{\r
+
+    \  \"nome\": \"Samsung S25 ultra\",\r
+
+    \  \"preco\": 7500,\r
+
+    \  \"descricao\": \"Celular samsung\",\r
+
+    \  \"quantidade\": 341\r
+
+    }"
+auth:
+  type: noauth
+scripts:
+  - type: afterResponse
+    code: "pm.test(\"Validar mensagem de sucesso\", function () {\r
+
+      \    pm.expect(pm.response.text()).to.include(\"Cadastro realizado com sucesso\");\r
+
+      });\r
+
+      \r
+
+      pm.test(\"Status code é 201\", function () {\r
+
+      \    pm.response.to.have.status(201);\r
+
+      });"
+    language: text/javascript
+order: 2623752527214986

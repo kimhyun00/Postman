@@ -1,0 +1,12 @@
+name: Globals
+values:
+  - key: dev
+    value: ''
+  - key: qa
+    value: ''
+  - key: hml
+    value: ''
+  - key: prd
+    value: ''
+  - key: local
+    value: ''

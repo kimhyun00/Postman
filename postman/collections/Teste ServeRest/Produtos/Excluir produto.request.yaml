@@ -1,0 +1,25 @@
+$kind: http-request
+description: ""
+url: "{{local}}/produtos/JltJB8ygLQqZZQan"
+method: DELETE
+auth:
+  type: bearer
+  credentials:
+    token: "{{supabase_service_role_api_key_0fpj}}"
+scripts:
+  - type: afterResponse
+    code: "pm.test(\"Status code é 200\", function () {\r
+
+      \    pm.response.to.have.status(200);\r
+
+      });\r
+
+      \r
+
+      pm.test(\"Validar mensagem\", function () {\r
+
+      \    pm.expect(pm.response.text()).to.include(\"Registro excluído com sucesso\");\r
+
+      });"
+    language: text/javascript
+order: 4280692441656411

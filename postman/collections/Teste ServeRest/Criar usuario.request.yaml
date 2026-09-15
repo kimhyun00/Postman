@@ -1,0 +1,18 @@
+$kind: http-request
+description: ""
+url: http://localhost:3000/usuarios
+method: POST
+body:
+  type: json
+  content: "{\r
+
+    \  \"nome\": \"Kim Teste\",\r
+
+    \  \"email\": \"teste@teste.com.br\",\r
+
+    \  \"password\": \"teste\",\r
+
+    \  \"administrador\": \"true\"\r
+
+    }"
+order: 4458225159520000

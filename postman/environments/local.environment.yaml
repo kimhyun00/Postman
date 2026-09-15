@@ -1,0 +1,6 @@
+name: local
+values:
+  - key: local
+    value: ''
+  - key: token
+    value: ''

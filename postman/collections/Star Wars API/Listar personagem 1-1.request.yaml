@@ -1,0 +1,22 @@
+$kind: http-request
+name: Listar personagem 1
+description: ""
+url: "{{dev}}/people/1/"
+method: GET
+scripts:
+  - type: afterResponse
+    code: "pm.test(\"Validar status code\", function () {\r
+
+      \    pm.response.to.have.status(200);\r
+
+      });\r
+
+      \r
+
+      pm.test(\"Validar o nome do personagem\", function () {\r
+
+      \    pm.expect(pm.response.text()).to.include(\"Luke Skywalker\");\r
+
+      });"
+    language: text/javascript
+order: 1526253259588905
